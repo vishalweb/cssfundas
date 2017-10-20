@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Keep Elements in place</title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+<style>
+    .box
+    {
+        width: 150px;
+        height: 150px;
+        margin:5px;
+        border:1px solid black; 
+        position: absolute;
+        top: 5px;
+    }
+    
+    #box1
+    {
+        background:red;
+        left: 5px;
+    }
+    
+    
+    #box2
+    {
+        background:green;
+        left: 175px;
+    }
+    
+    
+    #box3
+    {
+        background:blue;
+        left: 345px;
+    }
+    
+    #container
+    {
+        position:absolute;
+        left: 5px; 
+        top: 170px;
+    }
+</style>
+<script>
+     $(document).ready(function(){
+        $("button").click(function(){
+            var id=$(this).attr("id");
+            $("." + id).remove();
+        }); 
+     });
+</script>    
+</head>
+<body>
+    <div id="box1" class="box 1"></div>
+    <div id="box2" class="box 2"></div>
+    <div id="box3" class="box 3"></div>
+    <div id="container">
+        <button id="1">Delete 1</button>
+        <button id="2">Delete 2</button>
+        <button id="3">Delete 3</button>
+    </div>
+</body>
+</html>
